@@ -25,13 +25,13 @@
         <a href="#acetona">
         <img src="{% static 'back/chart/img/acetona.jpg' %}" width="75" height="75" class="img-responsive"
              alt="{% trans 'Acetona' %}">
-        <h4>{% trans 'Acetona' %}</h4></a>
+        <h4>{% trans 'Acetone' %}</h4></a>
     </div>
     <div class="col-xs-4 col-sm-2 placeholder">
         <a href="#nh4">
         <img src="{% static 'back/chart/img/nh4.png' %}" width="75" height="75" class="img-responsive"
              alt="{% trans 'Methane' %}">
-        <h4>{% trans 'Methane' %}</h4></a>
+        <h4>{% trans 'Amoni' %}</h4></a>
     </div>
     <div class="col-xs-4 col-sm-2 placeholder">
         <a href="#alcohol">
@@ -46,24 +46,6 @@
         <h4>{% trans 'Tolueno' %}</h4></a>
     </div>
     <!-- <div class="container" style="background-color: #97DEFF;"> -->
-    <div class="filter-box">
-      <div class="filter-box-title">
-          Date Range
-      </div>
-      <div class="filter-box-data">
-          <input type="hidden" name="start_date" id="Sdate"
-              value="{{request.GET.start_date}}" placeholder="start_date">
-          <input type="hidden" name="end_date" id="Edate"
-              value="{{request.GET.end_date}}" placeholder="end_date">
-          <div class="input-date-range-wrap">
-              <select id="date-range">
-                <option value="Today">Today</option>
-                <option value="Yesterday">Yesterday</option>
-              </select>
-              <input type="submit" value="Submit">
-          </div>
-      </div>
-    </div>
 {% endblock %}
     <!-- <div class="col-xs-4 col-sm-2 placeholder">
       <div id="container" style="width: 50%;">
@@ -81,14 +63,14 @@
         <div class="d-flex align-items-center justify-content-between">
           <div>
             <h4 class="fw-normal" style="color: whitesmoke; font-weight: bolder;">
-              {{avg_1}}
+              {{avg_1}} ppm
             </h4>
           </div>
         </div>
       </div>
       <div class="card-footer py-3 bg-red-light">
         <div class="align-items-center">
-          <p class="mb-0" style="color: whitesmoke; font-weight: bolder;">Carbon monoxide</p>
+          <p class="mb-0" style="color: whitesmoke; font-weight: bolder;">CO</p>
         </div>
       </div>
     </div>
@@ -100,14 +82,14 @@
         <div class="d-flex align-items-center justify-content-between">
           <div>
             <h4 class="fw-normal" style="color: whitesmoke; font-weight: bolder;">
-              {{avg_2}}
+              {{avg_2}} ppm
             </h4>
           </div>
         </div>
       </div>
       <div class="card-footer py-3 bg-red-light">
         <div class="align-items-center">
-          <p class="mb-0" style="color: whitesmoke; font-weight: bolder;">Carbon dioxide</p>
+          <p class="mb-0" style="color: whitesmoke; font-weight: bolder;">CO2</p>
         </div>
       </div>
     </div>
@@ -119,14 +101,14 @@
         <div class="d-flex align-items-center justify-content-between">
           <div>
             <h4 class="fw-normal" style="color: whitesmoke; font-weight: bolder;">
-              {{avg_3}}
+              {{avg_3}} ppm
             </h4>
           </div>
         </div>
       </div>
       <div class="card-footer py-3 bg-red-light">
         <div class="align-items-center">
-          <p class="mb-0" style="color: whitesmoke; font-weight: bolder;">Acetona</p>
+          <p class="mb-0" style="color: whitesmoke; font-weight: bolder;">Acetone</p>
         </div>
       </div>
     </div>
@@ -138,14 +120,14 @@
         <div class="d-flex align-items-center justify-content-between">
           <div>
             <h4 class="fw-normal" style="color: whitesmoke; font-weight: bolder;">
-              {{avg_4}}
+              {{avg_4}} ppm
             </h4>
           </div>
         </div>
       </div>
       <div class="card-footer py-3 bg-red-light">
         <div class="align-items-center">
-          <p class="mb-0" style="color: whitesmoke; font-weight: bolder;">Methane</p>
+          <p class="mb-0" style="color: whitesmoke; font-weight: bolder;">NH4</p>
         </div>
       </div>
     </div>
@@ -157,7 +139,7 @@
         <div class="d-flex align-items-center justify-content-between">
           <div>
             <h4 class="fw-normal" style="color: whitesmoke; font-weight: bolder;">
-              {{avg_5}}
+              {{avg_5}} ppm
             </h4>
           </div>
         </div>
@@ -176,7 +158,7 @@
         <div class="d-flex align-items-center justify-content-between">
           <div>
             <h4 class="fw-normal" style="color: whitesmoke; font-weight: bolder;">
-              {{avg_6}}
+              {{avg_6}} ppm
             </h4>
           </div>
         </div>

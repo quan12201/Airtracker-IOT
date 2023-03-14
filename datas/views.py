@@ -141,14 +141,16 @@ def data_chart_ajax(request, id):
     data_5 = []
     data_6 = []
 
-    for entry in datas:
-        labels.append(entry.pub_date)
-        data_1.append(entry.field_1)
-        data_2.append(entry.field_2)
-        data_3.append(entry.field_3)
-        data_4.append(entry.field_4)
-        data_5.append(entry.field_5)
-        data_6.append(entry.field_6)
+
+    for i in range(len(datas) - 1, 0, -1):
+        labels.append(datas[i].pub_date)
+        data_1.append(datas[i].field_1)
+        data_2.append(datas[i].field_2)
+        data_3.append(datas[i].field_3)
+        data_4.append(datas[i].field_4)
+        data_5.append(datas[i].field_5)
+        data_6.append(datas[i].field_6)
+
 
     return JsonResponse(data={
         'labels': labels,
