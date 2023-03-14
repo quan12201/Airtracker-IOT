@@ -65,12 +65,11 @@
 <div class="container-fluid">
     <div class="row">
 
-        {% include 'back/sidebar.html' %}
-        <div class="col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0" style="padding-left: 15%;">
+        <div class="col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0">
             <h1 class="page-header">{% block website_name %}{% endblock %}</h1>
             {% block stat %}{% endblock %}
         </div>
-        <div class="col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 main" style="padding-left: 15%;">
+        <div class="col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 main">
             {% block content %}{% endblock %}
         </div>
     </div>

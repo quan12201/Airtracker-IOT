@@ -7,6 +7,7 @@
 {% block title %}{% trans 'Device list' %}{% endblock %}
 
 {% block website_name %}{% trans 'Device list' %}
+<a class="btn btn-primary" href="{% url 'device_add' %}" role="button"> Add device </a>
     <!--<a class="btn btn-primary" href='{% url "export" "device" %}?format=json' role="button">{% trans 'Export JSON' %}</a>-->
     <!--<a class="btn btn-success" href='{% url "export" "device" %}?format=xml' role="button">{% trans 'Export XML' %}</a>-->
 {% endblock %}
