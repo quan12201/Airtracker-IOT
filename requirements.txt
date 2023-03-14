@@ -7,3 +7,4 @@ whitenoise
 paho-mqtt
 django-background-tasks
 GitPython
+channels
