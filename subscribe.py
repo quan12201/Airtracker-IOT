@@ -67,6 +67,17 @@ def run():
     client.loop_forever()
 
 
+def test():
+    device = Device.objects.get(id=12)
+    Data.objects.create(device=device, 
+                        field_1='10.1', 
+                        field_2='400.2', 
+                        field_3='1.2',
+                        field_4='8.5', 
+                        field_5='3.2', 
+                        field_6='1.4',
+                        remote_address='127.0.0.1'
+                        )
 
-
+# test()
 run()

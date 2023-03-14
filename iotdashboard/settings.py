@@ -61,13 +61,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'iotdashboard.wsgi.application'
 
-ASGI_APPLICATION = 'iotdashboard.routing.application'
+ASGI_APPLICATION = 'iotdashboard.asgi.application'
 
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': "channels.layers.InMemoryChannelLayer"
-        }
-    }
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 DEBUG = True
 
@@ -153,4 +156,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 1
 }
 
-
+TELEGRAM = {
+    'bot_token': os.environ.get("TOKEN_BOT"),
+    'channel_name': 'air_tracker_iot',
+}
