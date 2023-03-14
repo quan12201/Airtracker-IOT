@@ -57,16 +57,20 @@ def subscribe(client: mqtt_client, sub_lst: list):
             print(sub_lst)
             if len(sub_lst) == 7:
                 device = Device.objects.get(id=int(sub_lst[0]))
-                # Data.objects.create(device=device, 
-                #                     field_1=sub_lst[1], 
-                #                     field_2=sub_lst[2], 
-                #                     field_3=sub_lst[3],
-                #                     field_4=sub_lst[4], 
-                #                     field_5=sub_lst[5], 
-                #                     field_6=sub_lst[6],
-                #                     remote_address='127.0.0.1'
-                #                     )
-                bot.send_message(chat_id='-1001801209079', text=sub_lst)
+                Data.objects.create(device=device, 
+                                    field_1=sub_lst[1], 
+                                    field_2=sub_lst[2], 
+                                    field_3=sub_lst[3],
+                                    field_4=sub_lst[4], 
+                                    field_5=sub_lst[5], 
+                                    field_6=sub_lst[6],
+                                    remote_address='127.0.0.1'
+                                    )
+                msg = ''
+                if float(sub_lst[2]) > 0.35:
+                    msg += 'CO2 is too high'
+                if msg != '':
+                    bot.send_message(chat_id='-1001801209079', text=msg)
                 
             sub_lst.clear()
         else:

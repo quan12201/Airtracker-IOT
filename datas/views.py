@@ -158,8 +158,8 @@ def data_chart_ajax(request, id):
     
     print(len(labels))
 
-    labels[0] = datas[9].pub_date
-    labels[9] = datas[0].pub_date
+    labels[0] = datas[9].pub_date.strftime("%d-%m-%Y:%H:%M:%S")
+    labels[9] = datas[0].pub_date.strftime("%d-%m-%Y:%H:%M:%S")
 
 
     return JsonResponse(data={

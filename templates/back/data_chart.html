@@ -5,7 +5,7 @@
 {% load i18n %}
 
 {% block website_name %}{% trans 'Dashboard' %}
-  <a class="btn btn-primary" href='{% url "data_chart" device.pk %}' role="button">{% trans 'Refresh' %}</a>
+  <a class="btn btn-primary" href='{% url "data_chart" id=device.pk %}' role="button">{% trans 'Refresh' %}</a>
 {% endblock %}
 
 {% block stat %}
