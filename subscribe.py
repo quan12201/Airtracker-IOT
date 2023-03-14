@@ -52,6 +52,7 @@ def subscribe(client: mqtt_client, sub_lst: list):
                                     field_6=sub_lst[6],
                                     remote_address='127.0.0.1'
                                     )
+                
             sub_lst.clear()
         else:
             sub_lst.append(msg.payload.decode())
@@ -80,4 +81,4 @@ def test():
                         )
 
 # test()
-run()
+# run()

@@ -102,7 +102,8 @@ def data_chart(request, id):
     refresh_data()
 
     device = Device.objects.get(pk=id)
-    datas = Data.objects.filter(device=device)
+    datas = Data.objects.filter(device=device)[:10]
+    
     print(datas[0].pub_date.date())
     avg_1 = 0
     avg_2 = 0
@@ -110,13 +111,13 @@ def data_chart(request, id):
     avg_4 = 0
     avg_5 = 0
     avg_6 = 0
-    for i in range(10):
-        avg_1 += float(datas[i].field_1)
-        avg_2 += float(datas[i].field_2)
-        avg_3 += float(datas[i].field_3)
-        avg_4 += float(datas[i].field_4)
-        avg_5 += float(datas[i].field_5)
-        avg_6 += float(datas[i].field_6)
+    for data in datas:
+        avg_1 += float(data.field_1)
+        avg_2 += float(data.field_2)
+        avg_3 += float(data.field_3)
+        avg_4 += float(data.field_4)
+        avg_5 += float(data.field_5)
+        avg_6 += float(data.field_6)
 
     avg_1 = round(avg_1 / 10, 2)
     avg_2 = round(avg_2 / 10, 2)
@@ -140,16 +141,25 @@ def data_chart_ajax(request, id):
     data_4 = []
     data_5 = []
     data_6 = []
+    # labels.append(datas[9].pub_date)
+    # labels.append(datas[0].pub_date)
 
 
-    for i in range(len(datas) - 1, 0, -1):
-        labels.append(datas[i].pub_date)
+    for i in range(len(datas) - 1, -1, -1):
+        pub_time = datas[i].pub_date.strftime("%m-%d-%Y:%H:%M:%S")
+        # labels.append(pub_time)
+        labels.append("")
         data_1.append(datas[i].field_1)
         data_2.append(datas[i].field_2)
         data_3.append(datas[i].field_3)
         data_4.append(datas[i].field_4)
         data_5.append(datas[i].field_5)
         data_6.append(datas[i].field_6)
+    
+    print(len(labels))
+
+    labels[0] = datas[9].pub_date
+    labels[9] = datas[0].pub_date
 
 
     return JsonResponse(data={

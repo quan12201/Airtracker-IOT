@@ -175,10 +175,8 @@
   <div id="container-2" style="background-color: #97DEFF;"></div>
     <a id="c1">
       <div class="canvas-container">
-        <canvas id="chart1" data-url="{% url 'data_chart_ajax' device.pk %}">
-          </canvas>
-          <canvas id="chart2" data-url="{% url 'data_chart_ajax' device.pk %}">
-          </canvas>
+        <canvas id="chart1" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
+          <canvas id="chart2" data-url="{% url 'data_chart_ajax' device.pk %}" style="padding-left: 5%;"></canvas>
       </div>
     </a>
 
@@ -192,7 +190,7 @@
     <!-- <div id="container3" style="width: 95%;"> -->
       <div class="canvas-container">
         <canvas id="chart3" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
-        <canvas id="chart4" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
+        <canvas id="chart4" data-url="{% url 'data_chart_ajax' device.pk %}" style="padding-left: 5%;"></canvas>
       </div>
     </a>
 
@@ -205,7 +203,7 @@
     <a id="c3">
       <div class="canvas-container">
         <canvas id="chart5" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
-        <canvas id="chart6" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
+        <canvas id="chart6" data-url="{% url 'data_chart_ajax' device.pk %}" style="padding-left: 5%;"></canvas>
       </div>
     </a>
 
@@ -256,6 +254,15 @@
                 text: 'CO gas chart'
               },
               bezierCurve: false,
+              scales: {
+                xAxes: [{
+                  ticks: {
+                    autoSkip: false,
+                    maxRotation: 0,
+                    minRotation: 0
+                  }
+                }]
+              },
             }
           });
         }
@@ -301,6 +308,15 @@
                 text: 'CO2 gas chart'
               },
               bezierCurve: false,
+              scales: {
+                xAxes: [{
+                  ticks: {
+                    autoSkip: false,
+                    maxRotation: 0,
+                    minRotation: 0
+                  }
+                }]
+              },
             }
           });
         }
@@ -344,6 +360,15 @@
                 text: 'Acetona gas chart'
               },
               bezierCurve: false,
+              scales: {
+                xAxes: [{
+                  ticks: {
+                    autoSkip: false,
+                    maxRotation: 0,
+                    minRotation: 0
+                  }
+                }]
+              },
             }
           });
         }
@@ -388,6 +413,15 @@
                 text: 'NH4 gas chart'
               },
               bezierCurve: false,
+              scales: {
+                xAxes: [{
+                  ticks: {
+                    autoSkip: false,
+                    maxRotation: 0,
+                    minRotation: 0
+                  }
+                }]
+              },
             }
           });
         }
@@ -431,6 +465,15 @@
                 text: 'Alcohol gas chart'
               },
               bezierCurve: false,
+              scales: {
+                xAxes: [{
+                  ticks: {
+                    autoSkip: false,
+                    maxRotation: 0,
+                    minRotation: 0
+                  }
+                }]
+              },
             }
           });
         }
@@ -474,6 +517,15 @@
                 text: 'Tolueno gas chart'
               },
               bezierCurve: false,
+              scales: {
+                xAxes: [{
+                  ticks: {
+                    autoSkip: false,
+                    maxRotation: 0,
+                    minRotation: 0
+                  }
+                }]
+              },
             }
           });
         }
